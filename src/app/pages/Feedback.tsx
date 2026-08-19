@@ -26,9 +26,9 @@ function Reveal({
 
 const inputBase: React.CSSProperties = {
   width: "100%",
-  background: "#f5f5f3",
-  border: "1px solid #e4e4e0",
-  borderRadius: "2px",
+  background: "#EDF6FB",
+  border: "1px solid #DCEAF1",
+  borderRadius: "10px",
   padding: "14px 16px",
   fontSize: "15px",
   lineHeight: 1.5,
@@ -113,7 +113,7 @@ export default function Feedback() {
                 fontWeight: 600,
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
-                color: "#8a8a8a",
+                color: "#6C8794",
                 marginBottom: "18px",
               }}
             >
@@ -138,7 +138,7 @@ export default function Feedback() {
               style={{
                 fontSize: "17px",
                 lineHeight: 1.65,
-                color: "#8a8a8a",
+                color: "#6C8794",
                 maxWidth: "440px",
               }}
             >
@@ -158,11 +158,11 @@ export default function Feedback() {
               {submitted ? (
                 <div
                   className="flex flex-col items-start gap-6 py-16"
-                  style={{ borderTop: "1px solid #e4e4e0" }}
+                  style={{ borderTop: "1px solid #DCEAF1" }}
                 >
                   <div
-                    className="flex items-center justify-center bg-[#0a0a0a]"
-                    style={{ width: "48px", height: "48px", borderRadius: "2px" }}
+                    className="flex items-center justify-center bg-[#22BFEE]"
+                    style={{ width: "48px", height: "48px", borderRadius: "999px" }}
                   >
                     <Check className="text-white w-5 h-5" />
                   </div>
@@ -179,13 +179,13 @@ export default function Feedback() {
                   >
                     Thank you
                   </h2>
-                  <p style={{ fontSize: "16px", lineHeight: 1.65, color: "#8a8a8a", maxWidth: "420px" }}>
+                  <p style={{ fontSize: "16px", lineHeight: 1.65, color: "#6C8794", maxWidth: "420px" }}>
                     We've received your feedback. Every submission is reviewed by our team and helps us prioritise what matters most.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="inline-block px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#0a0a0a] text-white border border-[#0a0a0a] transition-colors duration-200 hover:bg-transparent hover:text-[#0a0a0a] mt-4"
-                    style={{ borderRadius: "2px" }}
+                    className="inline-block px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#22BFEE] text-white border border-[#22BFEE] transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white mt-4"
+                    style={{ borderRadius: "999px" }}
                   >
                     Send another
                   </button>
@@ -194,7 +194,7 @@ export default function Feedback() {
                 <form
                   onSubmit={handleSubmit}
                   noValidate
-                  style={{ borderTop: "1px solid #e4e4e0", paddingTop: "40px" }}
+                  style={{ borderTop: "1px solid #DCEAF1", paddingTop: "40px" }}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     {/* Name */}
@@ -208,8 +208,8 @@ export default function Feedback() {
                         onChange={handleChange}
                         placeholder="Your name"
                         style={errors.name ? inputError : inputBase}
-                        onFocus={(e) => (e.target.style.borderColor = "#0a0a0a")}
-                        onBlur={(e) => (e.target.style.borderColor = errors.name ? "#b00" : "#e4e4e0")}
+                        onFocus={(e) => (e.target.style.borderColor = "#22BFEE")}
+                        onBlur={(e) => (e.target.style.borderColor = errors.name ? "#b00" : "#DCEAF1")}
                       />
                       {errors.name && <p style={errorStyle}>{errors.name}</p>}
                     </div>
@@ -225,8 +225,8 @@ export default function Feedback() {
                         onChange={handleChange}
                         placeholder="your@email.com"
                         style={errors.email ? inputError : inputBase}
-                        onFocus={(e) => (e.target.style.borderColor = "#0a0a0a")}
-                        onBlur={(e) => (e.target.style.borderColor = errors.email ? "#b00" : "#e4e4e0")}
+                        onFocus={(e) => (e.target.style.borderColor = "#22BFEE")}
+                        onBlur={(e) => (e.target.style.borderColor = errors.email ? "#b00" : "#DCEAF1")}
                       />
                       {errors.email && <p style={errorStyle}>{errors.email}</p>}
                     </div>
@@ -241,8 +241,8 @@ export default function Feedback() {
                       value={form.category}
                       onChange={handleChange}
                       style={{ ...inputBase, appearance: "none", cursor: "pointer" }}
-                      onFocus={(e) => (e.target.style.borderColor = "#0a0a0a")}
-                      onBlur={(e) => (e.target.style.borderColor = "#e4e4e0")}
+                      onFocus={(e) => (e.target.style.borderColor = "#22BFEE")}
+                      onBlur={(e) => (e.target.style.borderColor = "#DCEAF1")}
                     >
                       <option value="general">General feedback</option>
                       <option value="feature">Feature request</option>
@@ -266,16 +266,16 @@ export default function Feedback() {
                         ...(errors.message ? inputError : inputBase),
                         resize: "vertical",
                       }}
-                      onFocus={(e) => (e.target.style.borderColor = "#0a0a0a")}
-                      onBlur={(e) => (e.target.style.borderColor = errors.message ? "#b00" : "#e4e4e0")}
+                      onFocus={(e) => (e.target.style.borderColor = "#22BFEE")}
+                      onBlur={(e) => (e.target.style.borderColor = errors.message ? "#b00" : "#DCEAF1")}
                     />
                     {errors.message && <p style={errorStyle}>{errors.message}</p>}
                   </div>
 
                   <button
                     type="submit"
-                    className="inline-block px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#0a0a0a] text-white border border-[#0a0a0a] transition-colors duration-200 hover:bg-transparent hover:text-[#0a0a0a]"
-                    style={{ borderRadius: "2px" }}
+                    className="inline-block px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#22BFEE] text-white border border-[#22BFEE] transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white"
+                    style={{ borderRadius: "999px" }}
                   >
                     Submit feedback
                   </button>
@@ -286,8 +286,8 @@ export default function Feedback() {
             {/* Aside */}
             <Reveal delay={0.12}>
               <div
-                className="bg-[#f5f5f3] p-8 md:p-10"
-                style={{ borderRadius: "2px" }}
+                className="bg-[#EDF6FB] p-8 md:p-10"
+                style={{ borderRadius: "16px" }}
               >
                 <p
                   style={{
@@ -295,7 +295,7 @@ export default function Feedback() {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.1em",
-                    color: "#8a8a8a",
+                    color: "#6C8794",
                     marginBottom: "20px",
                   }}
                 >
@@ -319,7 +319,7 @@ export default function Feedback() {
                   ].map((item, i) => (
                     <div
                       key={item.heading}
-                      style={{ borderTop: i === 0 ? "none" : "1px solid #e4e4e0", paddingTop: i === 0 ? 0 : "20px" }}
+                      style={{ borderTop: i === 0 ? "none" : "1px solid #DCEAF1", paddingTop: i === 0 ? 0 : "20px" }}
                     >
                       <p
                         style={{
@@ -333,7 +333,7 @@ export default function Feedback() {
                       >
                         {item.heading}
                       </p>
-                      <p style={{ fontSize: "13px", lineHeight: 1.65, color: "#8a8a8a" }}>
+                      <p style={{ fontSize: "13px", lineHeight: 1.65, color: "#6C8794" }}>
                         {item.body}
                       </p>
                     </div>

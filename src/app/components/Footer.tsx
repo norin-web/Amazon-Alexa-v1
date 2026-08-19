@@ -31,8 +31,8 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-[#f5f5f3] text-[#0a0a0a]"
-      style={{ borderTop: "1px solid #e4e4e0" }}
+      className="bg-[#EDF6FB] text-[#0a0a0a]"
+      style={{ borderTop: "1px solid #DCEAF1" }}
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 pt-16 pb-10">
         {/* Top row */}
@@ -51,21 +51,21 @@ export default function Footer() {
                 color: "#0a0a0a",
               }}
             >
-              aqua eco
+              aqua <span style={{ color: "#0B8FC4" }}>eco</span>
             </Link>
             <p
-              className="text-[#8a8a8a]"
+              className="text-[#6C8794]"
               style={{ fontSize: "13px", lineHeight: 1.7 }}
             >
               Seamless sound control for iOS. Your devices, beautifully connected.
             </p>
             <div className="mt-6">
               <a
-                href="https://apps.apple.com/app/id6502056598"
+                href="https://apps.apple.com/app/id6797539419"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-[13px] bg-[#0a0a0a] text-white border border-[#0a0a0a] text-[11px] font-semibold uppercase tracking-[0.07em] transition-colors duration-200 hover:bg-transparent hover:text-[#0a0a0a]"
-                style={{ borderRadius: "2px" }}
+                className="inline-block px-6 py-[13px] bg-[#22BFEE] text-white border border-[#22BFEE] text-[11px] font-semibold uppercase tracking-[0.07em] transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white"
+                style={{ borderRadius: "999px" }}
               >
                 Download on the App Store
               </a>
@@ -92,7 +92,7 @@ export default function Footer() {
                     <Link
                       key={l.to}
                       to={l.to}
-                      className="text-[#8a8a8a] hover:text-[#0a0a0a] transition-colors duration-200"
+                      className="text-[#6C8794] hover:text-[#0a0a0a] transition-colors duration-200"
                       style={{ fontSize: "13px", lineHeight: 1.5 }}
                     >
                       {l.label}
@@ -107,20 +107,20 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
-          style={{ borderTop: "1px solid #e4e4e0", paddingTop: "24px" }}
+          style={{ borderTop: "1px solid #DCEAF1", paddingTop: "24px" }}
         >
           <p
-            className="text-[#8a8a8a]"
+            className="text-[#6C8794]"
             style={{ fontSize: "12px" }}
           >
             © {year} aqua eco. All rights reserved.
           </p>
           <a
-            href="mailto:nikolic@litcoding.store"
-            className="text-[#8a8a8a] hover:text-[#0a0a0a] transition-colors duration-200"
+            href="mailto:tomislav@aquaeco.store"
+            className="text-[#6C8794] hover:text-[#0a0a0a] transition-colors duration-200"
             style={{ fontSize: "12px" }}
           >
-            nikolic@litcoding.store
+            tomislav@aquaeco.store
           </a>
         </div>
       </div>

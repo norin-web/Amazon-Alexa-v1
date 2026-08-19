@@ -6,7 +6,7 @@ import Screen3 from "../../imports/1320X28683/index";
 import Screen4 from "../../imports/1320X28684/index";
 import Screen5 from "../../imports/1320X28685/index";
 
-const APP_STORE = "https://apps.apple.com/app/id6502056598";
+const APP_STORE = "https://apps.apple.com/app/id6797539419";
 
 const NATIVE_W = 1320;
 const NATIVE_H = 2868;
@@ -39,14 +39,18 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
   return (
     <p
       style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "8px",
         fontSize: "11px",
         fontWeight: 600,
         textTransform: "uppercase",
         letterSpacing: "0.12em",
-        color: light ? "rgba(255,255,255,0.45)" : "#8a8a8a",
+        color: light ? "rgba(255,255,255,0.45)" : "#6C8794",
         marginBottom: "16px",
       }}
     >
+      <span style={{ width: "6px", height: "6px", borderRadius: "999px", background: "#22BFEE", flexShrink: 0 }} />
       {children}
     </p>
   );
@@ -54,23 +58,33 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
 
 /* ─── data ────────────────────────────────────────────────────────────────── */
 
-const stripScreens: React.ComponentType[] = [Screen1, Screen2, Screen3, Screen4, Screen5];
-
-const features: {
+type StripItem = { Component?: React.ComponentType; imageSrc?: string };
+type Feature = {
   number: string;
   eyebrow: string;
   headline: string;
   body: string;
-  Component: React.ComponentType;
+  Component?: React.ComponentType;
+  imageSrc?: string;
   bg: string;
   textDark: boolean;
-}[] = [
+};
+
+const stripItems: StripItem[] = [
+  { imageSrc: "/images/strip1.png" },
+  { imageSrc: "/images/strip2.png" },
+  { imageSrc: "/images/strip3.png" },
+  { imageSrc: "/images/strip4.png" },
+  { imageSrc: "/images/strip5.png" },
+];
+
+const features: Feature[] = [
   {
     number: "01",
     eyebrow: "Home screen",
     headline: "Amazon Alexa\nSoundbar",
     body: "Your complete soundbar controller. Monitor connection status, adjust volume with precision, and access Apple Music playback — all from a single, clean interface.",
-    Component: Screen1,
+    imageSrc: "/images/screen1.png",
     bg: "#ffffff",
     textDark: true,
   },
@@ -79,7 +93,7 @@ const features: {
     eyebrow: "Device connection",
     headline: "Connect\nDevices",
     body: "Discover and pair your SR-X40A soundbar in seconds. Real-time connection status, quick access to Sound Effect and LED Effect controls — always one tap away.",
-    Component: Screen2,
+    imageSrc: "/images/screen2.png",
     bg: "#0a0a0a",
     textDark: false,
   },
@@ -88,8 +102,8 @@ const features: {
     eyebrow: "Playback",
     headline: "Control\nPlayback",
     body: "Full music player controls — play, pause, skip, and scrub through tracks. Album art, track info, and volume in one distraction-free interface.",
-    Component: Screen3,
-    bg: "#f5f5f3",
+    imageSrc: "/images/screen3.png",
+    bg: "#EDF6FB",
     textDark: true,
   },
   {
@@ -97,7 +111,7 @@ const features: {
     eyebrow: "LED control",
     headline: "Adjust\nLED Effects",
     body: "Choose from Rhythm, Cycle, Movie, Party, Christmas, Halloween, and more. Customize your soundbar's lighting to match any moment.",
-    Component: Screen4,
+    imageSrc: "/images/screen4.png",
     bg: "#0a0a0a",
     textDark: false,
   },
@@ -106,7 +120,7 @@ const features: {
     eyebrow: "Streaming",
     headline: "Stream from\nFiles & Apps",
     body: "Browse and play directly from your device's music library. Connect to Files and your favorite apps — all audio sources accessible in one place.",
-    Component: Screen5,
+    imageSrc: "/images/screen5.png",
     bg: "#ffffff",
     textDark: true,
   },
@@ -129,73 +143,93 @@ export default function OurApp() {
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section className="bg-[#0a0a0a] text-white px-6 md:px-10 lg:px-16 pt-36 md:pt-44 pb-24 md:pb-32">
         <div className="max-w-[1440px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p
-              style={{
-                fontSize: "11px",
-                fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: "0.14em",
-                color: "rgba(255,255,255,0.4)",
-                marginBottom: "28px",
-              }}
-            >
-              aqua eco — iOS App
-            </p>
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-            <h1
-              style={{
-                fontFamily: "'Archivo', sans-serif",
-                fontWeight: 900,
-                fontSize: "clamp(2.75rem, 8vw, 6.5rem)",
-                lineHeight: 0.92,
-                letterSpacing: "-0.03em",
-                textTransform: "uppercase",
-                color: "#ffffff",
-                maxWidth: "820px",
-                marginBottom: "32px",
-              }}
+            {/* Left: text */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="flex-1"
             >
-              Amazon Alexa<br />Soundbar
-            </h1>
+              <p
+                style={{
+                  fontSize: "11px",
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.14em",
+                  color: "rgba(255,255,255,0.4)",
+                  marginBottom: "28px",
+                }}
+              >
+                aqua eco — iOS App
+              </p>
 
-            <p
-              style={{
-                fontSize: "17px",
-                lineHeight: 1.65,
-                color: "rgba(255,255,255,0.55)",
-                maxWidth: "480px",
-                marginBottom: "44px",
-              }}
-            >
-              Control your Alexa-compatible soundbar from iPhone. Volume, LED effects,
-              playback, and streaming — one app for everything.
-            </p>
+              <h1
+                style={{
+                  fontFamily: "'Archivo', sans-serif",
+                  fontWeight: 900,
+                  fontSize: "clamp(2.75rem, 8vw, 6.5rem)",
+                  lineHeight: 0.92,
+                  letterSpacing: "-0.03em",
+                  textTransform: "uppercase",
+                  color: "#ffffff",
+                  maxWidth: "820px",
+                  marginBottom: "32px",
+                }}
+              >
+                Amazon Alexa<br />Soundbar
+              </h1>
 
-            <a
-              href={APP_STORE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-white text-[#0a0a0a] border border-white transition-colors duration-200 hover:bg-transparent hover:text-white"
-              style={{ borderRadius: "2px" }}
+              <p
+                style={{
+                  fontSize: "17px",
+                  lineHeight: 1.65,
+                  color: "rgba(255,255,255,0.55)",
+                  maxWidth: "480px",
+                  marginBottom: "44px",
+                }}
+              >
+                Control your Alexa-compatible soundbar from iPhone. Volume, LED effects,
+                playback, and streaming — one app for everything.
+              </p>
+
+              <a
+                href={APP_STORE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#22BFEE] text-white border border-[#22BFEE] transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white"
+                style={{ borderRadius: "999px" }}
+              >
+                Download on the App Store
+              </a>
+            </motion.div>
+
+            {/* Right: Alexa device image */}
+            <motion.div
+              initial={{ opacity: 0, x: 32 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.0, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="hidden lg:flex justify-center items-center flex-shrink-0"
             >
-              Download on the App Store
-            </a>
-          </motion.div>
+              <img
+                src="/images/alexa-device.png"
+                alt="Amazon Alexa"
+                style={{ width: "360px", maxWidth: "100%", display: "block" }}
+              />
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
       {/* ── PROMO SCROLL STRIP ────────────────────────────────────────────── */}
       <section className="bg-white pt-20 md:pt-28 pb-16 md:pb-20">
         <div
-          className="flex gap-3 md:gap-4 overflow-x-auto px-6 md:px-10 lg:px-16"
+          className="flex items-end justify-center gap-3 md:gap-4 overflow-x-auto px-6 md:px-10 lg:px-16"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" } as React.CSSProperties}
         >
-          {stripScreens.map((Component, i) => (
+          {stripItems.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -204,7 +238,6 @@ export default function OurApp() {
               transition={{ duration: 0.6, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
               className="shrink-0 flex flex-col gap-3"
             >
-              {/* overflow container clips to clamp height */}
               <div
                 style={{
                   height: "clamp(340px, 46vw, 560px)",
@@ -214,20 +247,28 @@ export default function OurApp() {
                   position: "relative",
                 }}
               >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: NATIVE_W,
-                    height: NATIVE_H,
-                    transform: `scale(${STRIP_SCALE})`,
-                    transformOrigin: "top left",
-                    pointerEvents: "none",
-                  }}
-                >
-                  <Component />
-                </div>
+                {item.imageSrc ? (
+                  <img
+                    src={item.imageSrc}
+                    alt={`Screen ${i + 1}`}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+                  />
+                ) : item.Component ? (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: NATIVE_W,
+                      height: NATIVE_H,
+                      transform: `scale(${STRIP_SCALE})`,
+                      transformOrigin: "top left",
+                      pointerEvents: "none",
+                    }}
+                  >
+                    <item.Component />
+                  </div>
+                ) : null}
               </div>
               <p
                 style={{
@@ -235,7 +276,7 @@ export default function OurApp() {
                   fontWeight: 600,
                   textTransform: "uppercase",
                   letterSpacing: "0.1em",
-                  color: "#8a8a8a",
+                  color: "#6C8794",
                   flexShrink: 0,
                 }}
               >
@@ -251,8 +292,8 @@ export default function OurApp() {
       {features.map((f, i) => {
         const reversed = i % 2 !== 0;
         const color = f.textDark ? "#0a0a0a" : "#ffffff";
-        const muted = f.textDark ? "#8a8a8a" : "rgba(255,255,255,0.5)";
-        const divider = f.textDark ? "#e4e4e0" : "#1c1c1c";
+        const muted = f.textDark ? "#6C8794" : "rgba(255,255,255,0.5)";
+        const divider = f.textDark ? "#DCEAF1" : "#10202A";
 
         return (
           <section key={f.number} style={{ backgroundColor: f.bg }}>
@@ -272,27 +313,35 @@ export default function OurApp() {
                       width: "clamp(160px, 24vw, 280px)",
                       aspectRatio: `${NATIVE_W}/${NATIVE_H}`,
                       overflow: "hidden",
-                      borderRadius: "2px",
+                      borderRadius: "56px",
                       position: "relative",
                       boxShadow: f.textDark
                         ? "0 24px 64px rgba(0,0,0,0.12)"
                         : "0 24px 64px rgba(0,0,0,0.45)",
                     }}
                   >
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: NATIVE_W,
-                        height: NATIVE_H,
-                        transform: `scale(${FEAT_SCALE})`,
-                        transformOrigin: "top left",
-                        pointerEvents: "none",
-                      }}
-                    >
-                      <f.Component />
-                    </div>
+                    {f.imageSrc ? (
+                      <img
+                        src={f.imageSrc}
+                        alt={f.eyebrow}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+                      />
+                    ) : f.Component ? (
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: NATIVE_W,
+                          height: NATIVE_H,
+                          transform: `scale(${FEAT_SCALE})`,
+                          transformOrigin: "top left",
+                          pointerEvents: "none",
+                        }}
+                      >
+                        <f.Component />
+                      </div>
+                    ) : null}
                   </motion.div>
                 </Reveal>
 
@@ -354,10 +403,10 @@ export default function OurApp() {
       })}
 
       {/* ── PLATFORM INFO ─────────────────────────────────────────────────── */}
-      <section className="bg-[#f5f5f3] px-6 md:px-10 lg:px-16 pt-24 md:pt-32 pb-24 md:pb-32">
+      <section className="bg-[#EDF6FB] px-6 md:px-10 lg:px-16 pt-24 md:pt-32 pb-24 md:pb-32">
         <div
           className="max-w-[1440px] mx-auto"
-          style={{ borderTop: "1px solid #e4e4e0", paddingTop: "52px" }}
+          style={{ borderTop: "1px solid #DCEAF1", paddingTop: "52px" }}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
 
@@ -368,7 +417,7 @@ export default function OurApp() {
                   fontWeight: 600,
                   textTransform: "uppercase",
                   letterSpacing: "0.12em",
-                  color: "#8a8a8a",
+                  color: "#6C8794",
                   marginBottom: "16px",
                 }}
               >
@@ -388,7 +437,7 @@ export default function OurApp() {
               >
                 Designed<br />for iPhone
               </h2>
-              <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#8a8a8a", maxWidth: "380px" }}>
+              <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#6C8794", maxWidth: "380px" }}>
                 Built exclusively for iOS, making full use of Apple's platform to deliver
                 a seamless, native experience for your Amazon Alexa-compatible soundbar.
               </p>
@@ -407,8 +456,8 @@ export default function OurApp() {
                     key={row.label}
                     className="flex justify-between items-baseline py-4"
                     style={{
-                      borderTop: "1px solid #e4e4e0",
-                      borderBottom: i === arr.length - 1 ? "1px solid #e4e4e0" : "none",
+                      borderTop: "1px solid #DCEAF1",
+                      borderBottom: i === arr.length - 1 ? "1px solid #DCEAF1" : "none",
                     }}
                   >
                     <span
@@ -417,7 +466,7 @@ export default function OurApp() {
                         fontWeight: 600,
                         textTransform: "uppercase",
                         letterSpacing: "0.06em",
-                        color: "#8a8a8a",
+                        color: "#6C8794",
                       }}
                     >
                       {row.label}
@@ -434,8 +483,8 @@ export default function OurApp() {
                   href={APP_STORE}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#0a0a0a] text-white border border-[#0a0a0a] transition-colors duration-200 hover:bg-transparent hover:text-[#0a0a0a]"
-                  style={{ borderRadius: "2px" }}
+                  className="inline-flex items-center px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#22BFEE] text-white border border-[#22BFEE] transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white"
+                  style={{ borderRadius: "999px" }}
                 >
                   Get it free on the App Store
                 </a>

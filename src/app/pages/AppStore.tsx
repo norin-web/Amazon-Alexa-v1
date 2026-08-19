@@ -6,7 +6,7 @@ import Screen3 from "../../imports/1320X28683/index";
 import Screen4 from "../../imports/1320X28684/index";
 import Screen5 from "../../imports/1320X28685/index";
 
-const APP_STORE = "https://apps.apple.com/app/id6502056598";
+const APP_STORE = "https://apps.apple.com/app/id6797539419";
 const NATIVE_W = 1320;
 const NATIVE_H = 2868;
 
@@ -80,8 +80,8 @@ export default function AppStore() {
                 href={APP_STORE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-white text-[#0a0a0a] border border-white transition-colors duration-200 hover:bg-transparent hover:text-white"
-                style={{ borderRadius: "2px" }}
+                className="inline-flex items-center px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#22BFEE] text-white border border-[#22BFEE] transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white"
+                style={{ borderRadius: "999px" }}
               >
                 Download on the App Store
               </a>
@@ -104,7 +104,7 @@ export default function AppStore() {
       {/* ── SCREENSHOTS ──────────────────────────────────────────────────── */}
       <section
         className="pb-24 md:pb-32"
-        style={{ borderTop: "1px solid #1c1c1c" }}
+        style={{ borderTop: "1px solid #10202A" }}
       >
         <div
           className="flex gap-4 md:gap-6 overflow-x-auto px-6 md:px-10 lg:px-16 pt-16 md:pt-20"
@@ -163,7 +163,7 @@ export default function AppStore() {
       {/* ── DETAILS TABLE ────────────────────────────────────────────────── */}
       <section
         className="px-6 md:px-10 lg:px-16 pt-20 md:pt-28 pb-28 md:pb-36"
-        style={{ borderTop: "1px solid #1c1c1c" }}
+        style={{ borderTop: "1px solid #10202A" }}
       >
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
@@ -231,8 +231,8 @@ export default function AppStore() {
                     key={row.label}
                     className="flex justify-between items-baseline py-4"
                     style={{
-                      borderTop: "1px solid #1c1c1c",
-                      borderBottom: i === arr.length - 1 ? "1px solid #1c1c1c" : "none",
+                      borderTop: "1px solid #10202A",
+                      borderBottom: i === arr.length - 1 ? "1px solid #10202A" : "none",
                     }}
                   >
                     <span
@@ -258,8 +258,8 @@ export default function AppStore() {
                   href={APP_STORE}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-white text-[#0a0a0a] border border-white transition-colors duration-200 hover:bg-transparent hover:text-white"
-                  style={{ borderRadius: "2px" }}
+                  className="inline-flex items-center px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#22BFEE] text-white border border-[#22BFEE] transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white"
+                  style={{ borderRadius: "999px" }}
                 >
                   Get it free on the App Store
                 </a>

@@ -26,9 +26,9 @@ function Reveal({
 
 const inputBase: React.CSSProperties = {
   width: "100%",
-  background: "#f5f5f3",
-  border: "1px solid #e4e4e0",
-  borderRadius: "2px",
+  background: "#EDF6FB",
+  border: "1px solid #DCEAF1",
+  borderRadius: "10px",
   padding: "14px 16px",
   fontSize: "15px",
   lineHeight: 1.5,
@@ -93,7 +93,7 @@ export default function Contact() {
     e.preventDefault();
     if (!validate()) return;
     // Open mailto as a courtesy — in production replace with a real endpoint
-    window.location.href = `mailto:nikolic@litcoding.store?subject=${encodeURIComponent(`[${form.type}] ${form.name}`)}&body=${encodeURIComponent(form.message)}`;
+    window.location.href = `mailto:tomislav@aquaeco.store?subject=${encodeURIComponent(`[${form.type}] ${form.name}`)}&body=${encodeURIComponent(form.message)}`;
     setSubmitted(true);
   };
 
@@ -114,7 +114,7 @@ export default function Contact() {
                 fontWeight: 600,
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
-                color: "#8a8a8a",
+                color: "#6C8794",
                 marginBottom: "18px",
               }}
             >
@@ -139,7 +139,7 @@ export default function Contact() {
               style={{
                 fontSize: "17px",
                 lineHeight: 1.65,
-                color: "#8a8a8a",
+                color: "#6C8794",
                 maxWidth: "440px",
               }}
             >
@@ -159,11 +159,11 @@ export default function Contact() {
               {submitted ? (
                 <div
                   className="flex flex-col items-start gap-6 py-16"
-                  style={{ borderTop: "1px solid #e4e4e0" }}
+                  style={{ borderTop: "1px solid #DCEAF1" }}
                 >
                   <div
-                    className="flex items-center justify-center bg-[#0a0a0a]"
-                    style={{ width: "48px", height: "48px", borderRadius: "2px" }}
+                    className="flex items-center justify-center bg-[#22BFEE]"
+                    style={{ width: "48px", height: "48px", borderRadius: "999px" }}
                   >
                     <Check className="text-white w-5 h-5" />
                   </div>
@@ -180,19 +180,19 @@ export default function Contact() {
                   >
                     Message sent
                   </h2>
-                  <p style={{ fontSize: "16px", lineHeight: 1.65, color: "#8a8a8a", maxWidth: "420px" }}>
+                  <p style={{ fontSize: "16px", lineHeight: 1.65, color: "#6C8794", maxWidth: "420px" }}>
                     Your email client should have opened with a pre-filled message. If not, write to us directly at{" "}
                     <a
-                      href="mailto:nikolic@litcoding.store"
+                      href="mailto:tomislav@aquaeco.store"
                       className="text-[#0a0a0a] underline"
                     >
-                      nikolic@litcoding.store
+                      tomislav@aquaeco.store
                     </a>
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="inline-block px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#0a0a0a] text-white border border-[#0a0a0a] transition-colors duration-200 hover:bg-transparent hover:text-[#0a0a0a] mt-4"
-                    style={{ borderRadius: "2px" }}
+                    className="inline-block px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#22BFEE] text-white border border-[#22BFEE] transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white mt-4"
+                    style={{ borderRadius: "999px" }}
                   >
                     Send another
                   </button>
@@ -201,7 +201,7 @@ export default function Contact() {
                 <form
                   onSubmit={handleSubmit}
                   noValidate
-                  style={{ borderTop: "1px solid #e4e4e0", paddingTop: "40px" }}
+                  style={{ borderTop: "1px solid #DCEAF1", paddingTop: "40px" }}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     {/* Name */}
@@ -215,8 +215,8 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="Your full name"
                         style={errors.name ? inputError : inputBase}
-                        onFocus={(e) => (e.target.style.borderColor = "#0a0a0a")}
-                        onBlur={(e) => (e.target.style.borderColor = errors.name ? "#b00" : "#e4e4e0")}
+                        onFocus={(e) => (e.target.style.borderColor = "#22BFEE")}
+                        onBlur={(e) => (e.target.style.borderColor = errors.name ? "#b00" : "#DCEAF1")}
                       />
                       {errors.name && <p style={errorStyle}>{errors.name}</p>}
                     </div>
@@ -232,8 +232,8 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="your@email.com"
                         style={errors.email ? inputError : inputBase}
-                        onFocus={(e) => (e.target.style.borderColor = "#0a0a0a")}
-                        onBlur={(e) => (e.target.style.borderColor = errors.email ? "#b00" : "#e4e4e0")}
+                        onFocus={(e) => (e.target.style.borderColor = "#22BFEE")}
+                        onBlur={(e) => (e.target.style.borderColor = errors.email ? "#b00" : "#DCEAF1")}
                       />
                       {errors.email && <p style={errorStyle}>{errors.email}</p>}
                     </div>
@@ -248,8 +248,8 @@ export default function Contact() {
                       value={form.type}
                       onChange={handleChange}
                       style={{ ...inputBase, appearance: "none", cursor: "pointer" }}
-                      onFocus={(e) => (e.target.style.borderColor = "#0a0a0a")}
-                      onBlur={(e) => (e.target.style.borderColor = "#e4e4e0")}
+                      onFocus={(e) => (e.target.style.borderColor = "#22BFEE")}
+                      onBlur={(e) => (e.target.style.borderColor = "#DCEAF1")}
                     >
                       <option value="support">Technical support</option>
                       <option value="partnership">Partnership / business</option>
@@ -272,16 +272,16 @@ export default function Contact() {
                         ...(errors.message ? inputError : inputBase),
                         resize: "vertical",
                       }}
-                      onFocus={(e) => (e.target.style.borderColor = "#0a0a0a")}
-                      onBlur={(e) => (e.target.style.borderColor = errors.message ? "#b00" : "#e4e4e0")}
+                      onFocus={(e) => (e.target.style.borderColor = "#22BFEE")}
+                      onBlur={(e) => (e.target.style.borderColor = errors.message ? "#b00" : "#DCEAF1")}
                     />
                     {errors.message && <p style={errorStyle}>{errors.message}</p>}
                   </div>
 
                   <button
                     type="submit"
-                    className="inline-block px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#0a0a0a] text-white border border-[#0a0a0a] transition-colors duration-200 hover:bg-transparent hover:text-[#0a0a0a]"
-                    style={{ borderRadius: "2px" }}
+                    className="inline-block px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#22BFEE] text-white border border-[#22BFEE] transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white"
+                    style={{ borderRadius: "999px" }}
                   >
                     Send message
                   </button>
@@ -292,8 +292,8 @@ export default function Contact() {
             {/* Aside */}
             <Reveal delay={0.12}>
               <div
-                className="bg-[#f5f5f3] p-8 md:p-10"
-                style={{ borderRadius: "2px" }}
+                className="bg-[#EDF6FB] p-8 md:p-10"
+                style={{ borderRadius: "16px" }}
               >
                 <p
                   style={{
@@ -301,7 +301,7 @@ export default function Contact() {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.1em",
-                    color: "#8a8a8a",
+                    color: "#6C8794",
                     marginBottom: "20px",
                   }}
                 >
@@ -309,33 +309,33 @@ export default function Contact() {
                 </p>
 
                 <div className="space-y-6">
-                  <div style={{ borderBottom: "1px solid #e4e4e0", paddingBottom: "20px" }}>
-                    <p style={{ fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#8a8a8a", marginBottom: "6px" }}>
+                  <div style={{ borderBottom: "1px solid #DCEAF1", paddingBottom: "20px" }}>
+                    <p style={{ fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#6C8794", marginBottom: "6px" }}>
                       Email
                     </p>
                     <a
-                      href="mailto:nikolic@litcoding.store"
-                      className="text-[#0a0a0a] hover:text-[#8a8a8a] transition-colors duration-200"
+                      href="mailto:tomislav@aquaeco.store"
+                      className="text-[#0a0a0a] hover:text-[#6C8794] transition-colors duration-200"
                       style={{ fontSize: "14px", wordBreak: "break-all" }}
                     >
-                      nikolic@litcoding.store
+                      tomislav@aquaeco.store
                     </a>
                   </div>
 
-                  <div style={{ borderBottom: "1px solid #e4e4e0", paddingBottom: "20px" }}>
-                    <p style={{ fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#8a8a8a", marginBottom: "6px" }}>
+                  <div style={{ borderBottom: "1px solid #DCEAF1", paddingBottom: "20px" }}>
+                    <p style={{ fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#6C8794", marginBottom: "6px" }}>
                       Response time
                     </p>
                     <p style={{ fontSize: "14px", color: "#0a0a0a" }}>Within 24 hours</p>
                   </div>
 
                   <div>
-                    <p style={{ fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#8a8a8a", marginBottom: "6px" }}>
+                    <p style={{ fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#6C8794", marginBottom: "6px" }}>
                       What to include
                     </p>
                     <ul
                       className="space-y-2"
-                      style={{ fontSize: "14px", color: "#8a8a8a", lineHeight: 1.6 }}
+                      style={{ fontSize: "14px", color: "#6C8794", lineHeight: 1.6 }}
                     >
                       {[
                         "Device model + iOS version",
@@ -344,7 +344,7 @@ export default function Contact() {
                         "Screenshots if relevant",
                       ].map((item) => (
                         <li key={item} className="flex items-start gap-2">
-                          <span className="mt-[7px] shrink-0 w-[5px] h-[5px] rounded-full bg-[#8a8a8a]" />
+                          <span className="mt-[7px] shrink-0 w-[5px] h-[5px] rounded-full bg-[#6C8794]" />
                           {item}
                         </li>
                       ))}

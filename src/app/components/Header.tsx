@@ -27,10 +27,10 @@ export default function Header() {
 
   const isHome = location.pathname === "/";
   const solidBg = isScrolled
-    ? "bg-white border-b border-[#e4e4e0]"
+    ? "bg-white border-b border-[#DCEAF1]"
     : isHome
     ? "bg-transparent border-b border-transparent"
-    : "bg-white border-b border-[#e4e4e0]";
+    : "bg-white border-b border-[#DCEAF1]";
   const textClass = isScrolled || !isHome ? "text-[#0a0a0a]" : "text-white";
   const logoClass = isScrolled || !isHome ? "text-[#0a0a0a]" : "text-white";
 
@@ -46,7 +46,10 @@ export default function Header() {
               to="/"
               className={`font-[Archivo] font-black text-[15px] uppercase tracking-[0.06em] transition-colors duration-300 ${logoClass}`}
             >
-              aqua eco
+              aqua{" "}
+              <span style={{ color: isScrolled || !isHome ? "#0B8FC4" : "#22BFEE" }}>
+                eco
+              </span>
             </Link>
 
             {/* Desktop nav */}
@@ -68,12 +71,8 @@ export default function Header() {
             <div className="hidden md:block">
               <Link
                 to="/contact"
-                className={`inline-block px-[22px] py-[10px] text-[11px] font-semibold uppercase tracking-[0.08em] border transition-colors duration-200 ${
-                  isScrolled || !isHome
-                    ? "border-[#0a0a0a] text-[#0a0a0a] hover:bg-[#0a0a0a] hover:text-white"
-                    : "border-white text-white hover:bg-white hover:text-[#0a0a0a]"
-                }`}
-                style={{ borderRadius: "2px" }}
+                className="inline-block px-[22px] py-[10px] text-[11px] font-semibold uppercase tracking-[0.08em] border border-[#22BFEE] bg-[#22BFEE] text-white transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white"
+                style={{ borderRadius: "999px" }}
               >
                 Get in touch
               </Link>
@@ -102,7 +101,7 @@ export default function Header() {
             className="fixed inset-0 z-40 bg-white md:hidden"
             style={{ top: "64px" }}
           >
-            <nav className="flex flex-col px-6 pt-8 pb-6 gap-6 border-t border-[#e4e4e0]">
+            <nav className="flex flex-col px-6 pt-8 pb-6 gap-6 border-t border-[#DCEAF1]">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
@@ -112,11 +111,11 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <div className="mt-4 pt-6 border-t border-[#e4e4e0]">
+              <div className="mt-4 pt-6 border-t border-[#DCEAF1]">
                 <Link
                   to="/contact"
-                  className="inline-block w-full text-center px-6 py-4 bg-[#0a0a0a] text-white text-[12px] font-semibold uppercase tracking-[0.08em]"
-                  style={{ borderRadius: "2px" }}
+                  className="inline-block w-full text-center px-6 py-4 bg-[#22BFEE] text-white text-[12px] font-semibold uppercase tracking-[0.08em] hover:bg-[#0B8FC4] hover:text-white transition-colors duration-200"
+                  style={{ borderRadius: "999px" }}
                 >
                   Get in touch
                 </Link>

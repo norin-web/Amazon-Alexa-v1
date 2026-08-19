@@ -81,7 +81,7 @@ export default function Support() {
                 fontWeight: 600,
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
-                color: "#8a8a8a",
+                color: "#6C8794",
                 marginBottom: "18px",
               }}
             >
@@ -106,7 +106,7 @@ export default function Support() {
               style={{
                 fontSize: "17px",
                 lineHeight: 1.65,
-                color: "#8a8a8a",
+                color: "#6C8794",
                 maxWidth: "480px",
               }}
             >
@@ -119,12 +119,12 @@ export default function Support() {
       {/* ── QUICK ACTIONS — 2 cards ───────────────────────────────────────────── */}
       <section className="bg-white px-6 md:px-10 lg:px-16 pt-20 md:pt-28 pb-16 md:pb-20">
         <div className="max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#e4e4e0]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#DCEAF1]">
 
             {/* Card 1 — Contact Support */}
             <Link
               to="/contact"
-              className="group bg-white flex flex-col justify-between gap-10 p-10 md:p-12 transition-colors duration-200 hover:bg-[#f5f5f3]"
+              className="group bg-white flex flex-col justify-between gap-10 p-10 md:p-12 transition-colors duration-200 hover:bg-[#EDF6FB]"
             >
               <div>
                 <p
@@ -133,7 +133,7 @@ export default function Support() {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.1em",
-                    color: "#8a8a8a",
+                    color: "#6C8794",
                     marginBottom: "14px",
                   }}
                 >
@@ -153,7 +153,7 @@ export default function Support() {
                 >
                   Contact support
                 </h2>
-                <p style={{ fontSize: "15px", lineHeight: 1.65, color: "#8a8a8a", maxWidth: "360px" }}>
+                <p style={{ fontSize: "15px", lineHeight: 1.65, color: "#6C8794", maxWidth: "360px" }}>
                   Send us a message with your question or issue. Fill in the contact form and we'll get back to you.
                 </p>
               </div>
@@ -180,7 +180,7 @@ export default function Support() {
             {/* Card 2 — Feedback */}
             <Link
               to="/feedback"
-              className="group bg-white flex flex-col justify-between gap-10 p-10 md:p-12 transition-colors duration-200 hover:bg-[#f5f5f3]"
+              className="group bg-white flex flex-col justify-between gap-10 p-10 md:p-12 transition-colors duration-200 hover:bg-[#EDF6FB]"
             >
               <div>
                 <p
@@ -189,7 +189,7 @@ export default function Support() {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.1em",
-                    color: "#8a8a8a",
+                    color: "#6C8794",
                     marginBottom: "14px",
                   }}
                 >
@@ -209,7 +209,7 @@ export default function Support() {
                 >
                   Send feedback
                 </h2>
-                <p style={{ fontSize: "15px", lineHeight: 1.65, color: "#8a8a8a", maxWidth: "360px" }}>
+                <p style={{ fontSize: "15px", lineHeight: 1.65, color: "#6C8794", maxWidth: "360px" }}>
                   Feature requests, bug reports, general thoughts — we read everything and use it to improve the app.
                 </p>
               </div>
@@ -237,7 +237,7 @@ export default function Support() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#f5f5f3] px-6 md:px-10 lg:px-16 pt-20 md:pt-28 pb-24 md:pb-36">
+      <section className="bg-[#EDF6FB] px-6 md:px-10 lg:px-16 pt-20 md:pt-28 pb-24 md:pb-36">
         <div className="max-w-[1440px] mx-auto">
           <Reveal className="mb-14">
             <p
@@ -246,7 +246,7 @@ export default function Support() {
                 fontWeight: 600,
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
-                color: "#8a8a8a",
+                color: "#6C8794",
                 marginBottom: "14px",
               }}
             >
@@ -272,13 +272,13 @@ export default function Support() {
             collapsible
             value={openItem}
             onValueChange={setOpenItem}
-            style={{ borderTop: "1px solid #e4e4e0" }}
+            style={{ borderTop: "1px solid #DCEAF1" }}
           >
             {faqs.map((faq, i) => (
               <Reveal key={i} delay={i * 0.04}>
                 <Accordion.Item
                   value={`item-${i}`}
-                  style={{ borderBottom: "1px solid #e4e4e0" }}
+                  style={{ borderBottom: "1px solid #DCEAF1" }}
                 >
                   <Accordion.Header>
                     <Accordion.Trigger
@@ -300,7 +300,7 @@ export default function Support() {
                       </span>
                       <span
                         className="shrink-0 transition-transform duration-300"
-                        style={{ color: "#8a8a8a" }}
+                        style={{ color: "#6C8794" }}
                       >
                         {openItem === `item-${i}` ? (
                           <Minus className="w-4 h-4" />
@@ -315,7 +315,7 @@ export default function Support() {
                       style={{
                         fontSize: "15px",
                         lineHeight: 1.72,
-                        color: "#8a8a8a",
+                        color: "#6C8794",
                         paddingBottom: "24px",
                         maxWidth: "680px",
                       }}
@@ -332,7 +332,7 @@ export default function Support() {
           <Reveal delay={0.1} className="mt-20">
             <div
               className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pt-10"
-              style={{ borderTop: "1px solid #e4e4e0" }}
+              style={{ borderTop: "1px solid #DCEAF1" }}
             >
               <div>
                 <p
@@ -348,14 +348,14 @@ export default function Support() {
                 >
                   Still have questions?
                 </p>
-                <p style={{ fontSize: "14px", color: "#8a8a8a" }}>
+                <p style={{ fontSize: "14px", color: "#6C8794" }}>
                   Our team responds within 24 hours.
                 </p>
               </div>
               <Link
                 to="/contact"
-                className="inline-block px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#0a0a0a] text-white border border-[#0a0a0a] transition-colors duration-200 hover:bg-transparent hover:text-[#0a0a0a] shrink-0"
-                style={{ borderRadius: "2px" }}
+                className="inline-block px-7 py-[15px] text-[13px] font-semibold uppercase tracking-[0.06em] bg-[#22BFEE] text-white border border-[#22BFEE] transition-colors duration-200 hover:bg-[#0B8FC4] hover:border-[#0B8FC4] hover:text-white shrink-0"
+                style={{ borderRadius: "999px" }}
               >
                 Contact us
               </Link>
